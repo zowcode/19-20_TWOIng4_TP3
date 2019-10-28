@@ -10,11 +10,17 @@ const API_URL_ICON = "http://openweathermap.org/img/wn/";
 
 class API_WEATHER{
   constructor(city){
+    console.log("I'm in API_WEATHER");
+    city = document.getElementById("city-input").value;
+    console.log(city);
     // Si la ville n'est pas définit alors la ville par défault est Paris
-    if(city === undefined){
+    if(city == undefined || city == ""){
       city = "paris";
+      console.log("city: undefined");
     }
     this.city = city;
+    console.log("city est:" );
+    console.log(city);
   }
 
   // Faire la requete à l'API openweathermap
@@ -25,6 +31,7 @@ class API_WEATHER{
       crossdomain: true
     })
   }
+
   // Retourne l'element HTML de l'icon symbolisant la méteo.
   getHTMLElementFromIcon(icon){
     return `<img src=${API_URL_ICON}${icon}@2x.png class="weather-icon"/>`

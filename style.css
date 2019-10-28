@@ -7,7 +7,7 @@
 }
 
 @media screen and (min-width: 425px) {
-  .button-load-forecast {
+  .button--forecast {
     width: 50% !important;
     margin: auto;
   }

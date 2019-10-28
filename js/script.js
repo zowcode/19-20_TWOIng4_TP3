@@ -1,11 +1,30 @@
+// Récupérer input --> city prend sa valeure
+function setCityValue(){
+  console.log("I'm in setCityValue");
+  //const city = document.getElementById("city-input").value;
+  console.log(city);
+  // appel de la fonction start avec nouvelle valeure
+}
 
-// Fonction appelée lors du click du bouton
+// Fonction test afficher axios 
+function afficheAxios() {
+  alert(axios.get(`${API_URL}?q=${this.city}&units=metric&appid=${API_KEY}`, {
+  crossdomain: true
+}));
+}
+
+// Fonction appelée lorsque page is loaded
 function start() {
   // Création de l'objet apiWeather
+  console.log("I'm in function Start");
+  
   const apiWeather = new API_WEATHER();
   // Appel de la fonction fetchTodayForecast
 
   apiWeather
+    // app fonction qui récupère promise 
+    // soit response soit error
+  
     .fetchTodayForecast()
     .then(function(response) {
       // Récupère la donnée d'une API
@@ -29,3 +48,4 @@ function start() {
       console.error(error);
     });
 }
+
